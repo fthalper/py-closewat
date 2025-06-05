@@ -1,64 +1,551 @@
 Run of pyclosewat.py
-     21 waters had their conformation symbols cleared
-A 107 @  0.755  -4.113  14.279 Hbond  2.52 A to A 194 @  1.469  -1.921  15.304
-A 109 @  5.743   7.296  23.451 clash  2.28 A to A 195 @  6.095   8.647  25.256
-A 109 @  6.095   8.647  25.256 clash  1.09 A to A 133 @  5.744   8.952  26.246
-A 110 @  9.606   9.795  29.518 clash  1.67 A to A 196 @  8.317   9.605  28.480
-A 110 @  8.317   9.605  28.480 clash  1.67 A to A 110 @  9.606   9.795  29.518
-A 112 @  3.595  10.013   8.631 Hbond  2.51 A to B 114 @  2.019   9.976   6.680
-A 113 @ 11.900  11.460  26.998 clash  1.66 A to A 197 @ 10.283  11.757  26.789
-A 113 @ 10.283  11.757  26.789 clash  1.66 A to A 113 @ 11.900  11.460  26.998
-A 115 @  9.229   5.389  10.955 Hbond  2.60 A to A 118 @ 10.731   6.436  12.795
-A 118 @ 10.731   6.436  12.795 clash  2.49 A to A 198 @ 10.700   3.944  12.792
-A 118 @ 10.700   3.944  12.792 clash  2.49 A to A 118 @ 10.731   6.436  12.795
-A 119 @  6.439  -3.990  10.775 clash  1.82 A to A 199 @  5.996  -5.740  11.001
-A 119 @  5.996  -5.740  11.001 clash  1.82 A to A 119 @  6.439  -3.990  10.775
-A 123 @  5.764 -12.683   5.073 Hbond  2.95 A to A 126 @  5.561 -10.451   6.994
-A 124 @ 11.289   8.503  16.628 Hbond  2.59 A to A 150 @ 13.389   7.968  18.048
-A 126 @  5.561 -10.451   6.994 clash  2.43 A to A 200 @  7.211  -9.308   5.620
-A 126 @  7.211  -9.308   5.620 clash  2.43 A to A 126 @  5.561 -10.451   6.994
-A 127 @ 11.927  10.238  14.686 Hbond  2.68 A to A 124 @ 11.289   8.503  16.628
-A 129 @  2.405  -5.225  12.628 Hbond  2.59 A to A 107 @  0.755  -4.113  14.279
-A 133 @  5.744   8.952  26.246 clash  1.09 A to A 109 @  6.095   8.647  25.256
-A 134 @ 10.741   5.462   8.499 Hbond  2.89 A to A 115 @  9.229   5.389  10.955
-A 150 @ 13.389   7.968  18.048 Hbond  2.59 A to A 124 @ 11.289   8.503  16.628
-A 152 @ -3.230  -2.353  13.284 Hbond  3.08 A to A 153 @ -0.392  -2.681  12.123
-A 153 @ -0.392  -2.681  12.123 Hbond  2.83 A to A 107 @  0.755  -4.113  14.279
-A 155 @  3.795   7.642   3.335 Hbond  3.09 A to A 158 @  2.618   6.367   5.894
-A 156 @ 13.168   6.862   4.737 Hbond  2.99 A to A 185 @ 13.683   7.250   7.653
-A 158 @  2.618   6.367   5.894 Hbond  3.09 A to A 155 @  3.795   7.642   3.335
-A 159 @  4.152  -3.537  10.865 clash  2.33 A to A 119 @  6.439  -3.990  10.775
-A 163 @  6.541   1.504  11.747 Hbond  2.98 A to A 191 @  4.307   0.627   9.977
-A 201 @  2.594   0.298  12.763 clash  2.16 A to B 164 @  3.611   2.102  12.150
-A 166 @ 11.338   8.670  11.211 Hbond  2.81 A to A 118 @ 10.731   6.436  12.795
-A 175 @  7.745  -7.084   3.687 Hbond  2.99 A to A 126 @  7.211  -9.308   5.620
-A 185 @ 13.683   7.250   7.653 Hbond  2.99 A to A 156 @ 13.168   6.862   4.737
-A 191 @  4.307   0.627   9.977 Hbond  2.72 A to B 164 @  3.611   2.102  12.150
-A 194 @  1.469  -1.921  15.304 Hbond  2.52 A to A 107 @  0.755  -4.113  14.279
-B 104 @  0.471   2.361  14.182 Hbond  2.72 A to B 121 @ -0.910   2.016  16.500
-B 105 @ -3.307   3.160   8.407 Hbond  2.80 A to B 108 @ -4.992   5.249   9.207
-B 108 @ -4.992   5.249   9.207 Hbond  2.80 A to B 105 @ -3.307   3.160   8.407
-B 114 @  2.019   9.976   6.680 Hbond  2.51 A to A 112 @  3.595  10.013   8.631
-B 116 @  5.184   1.250  14.413 Hbond  2.66 A to B 149 @  6.952   0.554  16.271
-B 117 @  2.009  10.401  10.816 Hbond  2.73 A to A 112 @  3.595  10.013   8.631
-B 121 @ -0.910   2.016  16.500 Hbond  2.72 A to B 104 @  0.471   2.361  14.182
-B 125 @  3.755   6.438  22.035 clash  2.10 A to B 202 @  4.481   4.502  22.410
-B 125 @  4.481   4.502  22.410 clash  2.10 A to B 125 @  3.755   6.438  22.035
-B 132 @ -7.874   9.145   9.094 Hbond  3.00 A to B 177 @ -8.281   6.322   8.170
-B 142 @  9.195   2.918  14.828 Hbond  2.73 A to A 118 @ 10.700   3.944  12.792
-B 143 @  3.158  -4.678  17.591 clash  1.72 A to B 203 @  3.125  -4.932  19.295
-B 143 @  3.125  -4.932  19.295 clash  1.72 A to B 143 @  3.158  -4.678  17.591
-B 149 @  6.952   0.554  16.271 Hbond  2.66 A to B 116 @  5.184   1.250  14.413
-B 162 @  1.608  -1.046  17.821 clash  1.97 A to B 204 @  0.328  -1.192  19.313
-B 162 @  0.328  -1.192  19.313 clash  1.97 A to B 162 @  1.608  -1.046  17.821
-B 164 @  3.611   2.102  12.150 clash  2.16 A to B 164 @  2.594   0.298  12.763
-B 177 @ -8.281   6.322   8.170 Hbond  3.00 A to B 132 @ -7.874   9.145   9.094
-Mean B value for waters = 17.86 (from 82 valid waters)
+      6 waters had their conformation symbols cleared
+A2001 @-11.965 -37.045  11.102 clash  1.03 A to A2199 @-12.242 -37.674  10.333
+A2001 @-12.242 -37.674  10.333 clash  1.03 A to A2001 @-11.965 -37.045  11.102
+A2002 @-13.115 -39.596  12.317 clash  2.44 A to A2014 @-12.293 -41.377  13.768
+A2004 @ -9.598 -30.278   5.831 Hbond  2.63 A to A2005 @-11.114 -32.288   6.587
+A2005 @-11.114 -32.288   6.587 Hbond  2.63 A to A2004 @ -9.598 -30.278   5.831
+A2006 @-10.308 -27.769   7.782 Hbond  2.80 A to A2008 @ -8.900 -26.119   9.548
+A2008 @ -8.900 -26.119   9.548 Hbond  2.80 A to A2006 @-10.308 -27.769   7.782
+A2009 @ -9.442 -25.117  14.166 Hbond  2.74 A to A2065 @ -7.188 -25.829  15.550
+A2011 @ -6.975 -25.402  12.438 Hbond  3.03 A to A2009 @ -9.442 -25.117  14.166
+A2012 @-12.884 -33.311   8.897 Hbond  3.08 A to A2005 @-11.114 -32.288   6.587
+A2013 @-11.700 -41.612   8.650 Hbond  2.66 A to A2030 @ -9.440 -42.245   7.394
+A2014 @-12.293 -41.377  13.768 clash  2.44 A to A2014 @-13.115 -39.596  12.317
+A2015 @-10.790 -35.476  19.826 Hbond  2.90 A to A2032 @-10.428 -32.598  19.977
+A2016 @ -6.121 -37.483  16.696 Hbond  2.91 A to A2042 @ -6.340 -39.765  18.490
+A2017 @ -7.300 -34.556  18.481 Hbond  2.61 A to A2033 @ -7.952 -32.096  19.057
+A2018 @-12.471 -46.355  13.811 Hbond  2.96 A to A2028 @-11.489 -49.146  13.728
+A2019 @-10.672 -48.854  11.245 clash  1.74 A to A2020 @-10.051 -48.927  12.874
+A2200 @-12.240 -49.591  11.683 clash  1.79 A to A2019 @-10.672 -48.854  11.245
+A2019 @-10.051 -48.927  12.874 clash  1.69 A to A2028 @-11.489 -49.146  13.728
+A2021 @ -7.210 -46.029   9.089 Hbond  2.89 A to A2034 @ -8.930 -44.963   7.024
+A2024 @ -9.763 -40.556  23.334 Hbond  2.73 A to A2038 @ -7.858 -42.205  22.271
+A2025 @-14.394 -37.730   6.330 Hbond  3.13 A to A2031 @-12.782 -40.259   5.431
+A2026 @-10.031 -43.914  21.220 Hbond  2.96 A to A2038 @ -7.858 -42.205  22.271
+A2027 @-12.728 -48.403  15.990 Hbond  2.68 A to A2028 @-11.489 -49.146  13.728
+A2028 @-11.489 -49.146  13.728 clash  1.69 A to A2019 @-10.051 -48.927  12.874
+A2030 @ -9.440 -42.245   7.394 Hbond  2.66 A to A2013 @-11.700 -41.612   8.650
+A2031 @-12.782 -40.259   5.431 Hbond  2.66 A to A2053 @-10.573 -41.604   4.830
+A2032 @-10.428 -32.598  19.977 Hbond  2.69 A to A2033 @ -7.952 -32.096  19.057
+A2033 @ -7.952 -32.096  19.057 Hbond  2.61 A to A2017 @ -7.300 -34.556  18.481
+A2034 @ -8.930 -44.963   7.024 Hbond  2.79 A to A2030 @ -9.440 -42.245   7.394
+A2035 @ -4.088 -49.391  22.542 Hbond  2.84 A to B2147 @ -3.006 -49.114  25.149
+A2036 @ -6.659 -47.979  24.951 clash  2.32 A to A2037 @ -4.764 -46.655  25.173
+A2036 @ -4.764 -46.655  25.173 clash  2.04 A to A2041 @ -3.798 -44.929  25.688
+A2038 @ -7.858 -42.205  22.271 Hbond  2.73 A to A2024 @ -9.763 -40.556  23.334
+A2040 @ -5.657 -41.623  20.696 Hbond  2.77 A to A2038 @ -7.858 -42.205  22.271
+A2041 @ -3.798 -44.929  25.688 clash  2.04 A to A2036 @ -4.764 -46.655  25.173
+A2042 @ -6.340 -39.765  18.490 Hbond  2.91 A to A2016 @ -6.121 -37.483  16.696
+A2043 @-10.217 -37.914  -1.165 clash  1.00 A to A2044 @-10.887 -38.521  -0.729
+A2044 @-10.887 -38.521  -0.729 clash  1.00 A to A2044 @-10.217 -37.914  -1.165
+A2045 @ -7.996 -36.563   1.777 Hbond  2.60 A to A2046 @-10.059 -37.077   3.280
+A2046 @-10.059 -37.077   3.280 Hbond  2.60 A to A2045 @ -7.996 -36.563   1.777
+A2047 @-13.166 -39.226   1.684 Hbond  2.66 A to A2048 @-14.809 -37.397   2.702
+A2048 @-14.809 -37.397   2.702 Hbond  2.66 A to A2047 @-13.166 -39.226   1.684
+A2049 @ -6.737 -41.833   8.102 Hbond  2.63 A to B2139 @ -5.184 -43.111   6.407
+A2050 @  0.843 -32.539   1.476 clash  1.04 A to A2104 @  1.118 -32.432   0.481
+A2051 @ -3.122 -30.822  -0.185 Hbond  2.75 A to A2057 @ -2.632 -29.867   2.348
+A2052 @ -2.169 -27.105   3.230 Hbond  2.94 A to A2057 @ -2.632 -29.867   2.348
+A2053 @-10.573 -41.604   4.830 Hbond  2.50 A to A2055 @-11.109 -39.582   3.458
+A2054 @ -8.269 -38.954   0.495 Hbond  2.73 A to A2045 @ -7.996 -36.563   1.777
+A2055 @-11.109 -39.582   3.458 Hbond  2.50 A to A2053 @-10.573 -41.604   4.830
+A2056 @  0.515 -32.630   4.656 Hbond  2.67 A to A2193 @ -0.036 -31.145   2.503
+A2057 @ -2.632 -29.867   2.348 Hbond  2.75 A to A2051 @ -3.122 -30.822  -0.185
+A2058 @ -7.171 -32.134   1.822 Hbond  2.69 A to A2059 @ -9.350 -30.968   2.879
+A2059 @ -9.350 -30.968   2.879 Hbond  2.69 A to A2058 @ -7.171 -32.134   1.822
+A2060 @ -2.643 -25.433   6.378 Hbond  2.65 A to A2061 @ -4.332 -23.394   6.233
+A2061 @ -4.332 -23.394   6.233 Hbond  2.65 A to A2060 @ -2.643 -25.433   6.378
+A2064 @ -3.887 -43.450  28.303 clash  2.28 A to A2120 @ -2.073 -43.613  29.681
+A2065 @ -7.188 -25.829  15.550 Hbond  2.74 A to A2009 @ -9.442 -25.117  14.166
+A2067 @  2.334 -15.768  14.828 clash  1.00 A to A2201 @  2.436 -15.546  13.859
+A2067 @  2.436 -15.546  13.859 clash  1.00 A to A2067 @  2.334 -15.768  14.828
+A2068 @  3.184 -13.483  16.846 clash  1.56 A to A2074 @  3.179 -13.080  15.342
+A2069 @ 21.055 -17.514  21.657 Hbond  2.60 A to A2131 @ 18.877 -17.495  20.243
+A2068 @  3.179 -13.080  15.342 clash  1.56 A to A2068 @  3.184 -13.483  16.846
+A2075 @  7.973 -11.049  22.813 Hbond  2.77 A to A2079 @  8.262  -8.815  21.203
+A2076 @  4.472 -35.211   0.483 Hbond  2.74 A to B2115 @  5.401 -37.080   2.260
+A2077 @  8.830 -34.200  -0.813 clash  1.56 A to A2178 @  9.290 -35.083   0.382
+A2078 @ 12.351 -30.738  -2.461 Hbond  2.73 A to A2175 @ 13.803 -31.580  -0.310
+A2079 @  8.262  -8.815  21.203 Hbond  2.77 A to A2075 @  7.973 -11.049  22.813
+A2080 @ 14.188 -20.838   2.449 Hbond  2.83 A to A2154 @ 11.806 -21.141   3.939
+A2081 @ 17.756 -16.486   6.206 Hbond  2.74 A to A2156 @ 17.436 -18.588   7.933
+A2082 @ 10.177 -12.233  14.958 clash  1.06 A to A2095 @ 10.406 -12.499  15.960
+A2083 @ 22.562 -21.615  22.792 Hbond  2.69 A to A2162 @ 24.878 -22.975  22.909
+A2084 @ 22.641 -15.717  15.740 Hbond  2.72 A to A2159 @ 22.183 -17.614  17.638
+A2085 @ 23.103 -16.750  20.185 Hbond  2.64 A to A2069 @ 21.055 -17.514  21.657
+A2086 @ 25.585 -15.635  23.230 Hbond  2.84 A to A2160 @ 24.855 -18.020  21.873
+A2087 @ 25.711 -22.665   7.880 Hbond  2.75 A to A2166 @ 26.282 -22.744  10.571
+A2088 @ 23.194 -29.069   6.068 Hbond  2.74 A to A2170 @ 21.772 -28.699   8.380
+A2089 @ 23.920 -14.196  19.965 Hbond  2.69 A to A2085 @ 23.103 -16.750  20.185
+A2090 @ 11.912 -36.286  -0.379 Hbond  2.70 A to A2177 @ 13.971 -35.195   0.981
+A2092 @ 18.664 -36.438  -0.086 Hbond  2.64 A to A2179 @ 16.737 -34.835   0.753
+A2093 @ 17.416 -37.390  -2.600 Hbond  2.96 A to A2092 @ 18.664 -36.438  -0.086
+A2094 @ 10.440 -12.464  11.340 clash  1.52 A to A2125 @ 11.772 -12.427  10.618
+A2095 @ 10.406 -12.499  15.960 clash  1.06 A to A2095 @ 10.177 -12.233  14.958
+A2096 @  9.633 -35.144  31.506 Hbond  2.77 A to A2183 @ 10.084 -32.413  31.438
+A2097 @ 12.268 -36.575  31.389 Hbond  2.81 A to A2182 @ 11.937 -34.140  30.018
+A2098 @ 20.749 -22.751  26.562 Hbond  2.75 A to A2102 @ 22.111 -20.445  27.164
+A2099 @ 19.888 -22.753  30.437 Hbond  2.76 A to A2103 @ 21.188 -20.357  30.031
+A2100 @ 22.175 -25.733  23.573 Hbond  2.68 A to A2186 @ 20.744 -23.478  23.834
+A2101 @ 23.307 -17.222  28.716 Hbond  2.68 A to A2187 @ 21.104 -17.609  27.238
+A2102 @ 22.111 -20.445  27.164 Hbond  2.75 A to A2098 @ 20.749 -22.751  26.562
+A2103 @ 21.188 -20.357  30.031 Hbond  2.76 A to A2099 @ 19.888 -22.753  30.437
+A2104 @  1.118 -32.432   0.481 clash  1.04 A to A2104 @  0.843 -32.539   1.476
+A2106 @ -6.683 -31.122  16.875 Hbond  2.71 A to A2033 @ -7.952 -32.096  19.057
+A2107 @ -0.119 -33.608  21.214 Hbond  2.70 A to A2111 @ -1.012 -34.957  23.374
+A2108 @  1.505 -31.155  21.701 Hbond  2.98 A to A2107 @ -0.119 -33.608  21.214
+A2109 @ -4.699 -31.019  22.355 clash  2.48 A to A2110 @ -4.116 -29.154  23.884
+A2109 @ -4.116 -29.154  23.884 clash  2.48 A to A2109 @ -4.699 -31.019  22.355
+A2111 @ -1.012 -34.957  23.374 Hbond  2.70 A to A2107 @ -0.119 -33.608  21.214
+A2114 @ -5.443 -41.176  28.426 Hbond  2.76 A to A2120 @ -3.887 -43.450  28.303
+A2115 @ -4.685 -43.438  23.536 Hbond  2.76 A to A2041 @ -3.798 -44.929  25.688
+A2118 @  0.218 -36.887  30.602 Hbond  2.58 A to A2198 @  0.219 -34.819  32.149
+A2120 @ -2.073 -43.613  29.681 clash  2.28 A to A2120 @ -3.887 -43.450  28.303
+A2121 @ -1.393 -45.721  26.782 Hbond  2.76 A to A2041 @ -3.798 -44.929  25.688
+A2094 @ 11.772 -12.427  10.618 clash  1.52 A to A2094 @ 10.440 -12.464  11.340
+A2126 @ 13.914 -11.953  14.544 Hbond  2.54 A to A2127 @ 12.809 -11.470  12.303
+A2127 @ 12.809 -11.470  12.303 clash  2.20 A to A2094 @ 11.772 -12.427  10.618
+A2128 @ 14.519 -14.256  15.964 Hbond  2.77 A to A2126 @ 13.914 -11.953  14.544
+A2129 @ 11.636 -13.406  18.331 Hbond  2.82 A to A2095 @ 10.406 -12.499  15.960
+A2130 @ 16.392 -17.891  21.123 Hbond  2.67 A to A2131 @ 18.877 -17.495  20.243
+A2131 @ 18.877 -17.495  20.243 Hbond  2.60 A to A2069 @ 21.055 -17.514  21.657
+A2132 @ 18.393 -14.819  19.055 Hbond  2.97 A to A2131 @ 18.877 -17.495  20.243
+A2134 @ 14.688 -18.036  23.335 Hbond  2.80 A to A2130 @ 16.392 -17.891  21.123
+A2135 @  7.077 -24.412  23.364 clash  1.10 A to A2137 @  6.093 -24.249  23.826
+A2136 @  8.992 -24.494  25.292 Hbond  2.72 A to A2137 @  7.077 -24.412  23.364
+A2137 @  6.093 -24.249  23.826 clash  1.10 A to A2137 @  7.077 -24.412  23.364
+A2138 @ 10.069 -30.923  30.053 clash  2.03 A to A2183 @ 10.084 -32.413  31.438
+A2142 @ 12.052 -33.804  27.340 Hbond  2.70 A to A2182 @ 11.937 -34.140  30.018
+A2144 @ 17.765 -34.077  25.278 Hbond  2.77 A to A2180 @ 18.744 -31.789  26.492
+A2145 @  8.070 -36.656   2.638 Hbond  2.59 A to A2148 @  8.071 -34.237   1.703
+A2146 @ 11.646 -38.603   3.422 Hbond  2.90 A to B2036 @ 13.068 -41.035   2.722
+A2147 @  5.283 -32.544   0.245 Hbond  2.80 A to A2076 @  4.472 -35.211   0.483
+A2148 @  8.071 -34.237   1.703 clash  1.99 A to A2077 @  9.290 -35.083   0.382
+A2151 @  2.314 -26.944   1.927 Hbond  2.55 A to A2194 @  2.064 -29.469   2.158
+A2153 @ 11.867 -24.298   0.186 Hbond  2.67 A to A2191 @  9.968 -22.653   1.085
+A2154 @ 11.806 -21.141   3.939 Hbond  2.83 A to A2080 @ 14.188 -20.838   2.449
+A2155 @ 18.161 -22.863   4.155 Hbond  2.80 A to A2174 @ 18.631 -25.348   2.946
+A2156 @ 17.436 -18.588   7.933 Hbond  2.74 A to A2081 @ 17.756 -16.486   6.206
+A2157 @ 19.630 -18.497  17.865 Hbond  2.69 A to A2131 @ 18.877 -17.495  20.243
+A2158 @ 21.293 -20.118  20.830 Hbond  2.74 A to A2069 @ 21.055 -17.514  21.657
+A2159 @ 22.183 -17.614  17.638 Hbond  2.71 A to A2157 @ 19.630 -18.497  17.865
+A2160 @ 24.855 -18.020  21.873 Hbond  2.74 A to A2085 @ 23.103 -16.750  20.185
+A2161 @ 26.223 -24.862  21.315 Hbond  2.75 A to B2025 @ 26.344 -27.003  23.040
+A2162 @ 24.878 -22.975  22.909 Hbond  2.69 A to A2083 @ 22.562 -21.615  22.792
+A2163 @ 27.528 -19.966  11.405 Hbond  3.16 A to A2166 @ 26.282 -22.744  10.571
+A2166 @ 26.282 -22.744  10.571 Hbond  2.75 A to A2087 @ 25.711 -22.665   7.880
+A2167 @ 24.091 -25.166   7.724 Hbond  2.88 A to A2172 @ 21.908 -24.551   5.956
+A2168 @ 25.653 -26.138  10.580 clash  1.75 A to A2169 @ 25.312 -26.556  12.244
+A2169 @ 25.312 -26.556  12.244 clash  1.72 A to B2022 @ 26.912 -26.489  12.860
+A2170 @ 21.772 -28.699   8.380 Hbond  2.74 A to A2088 @ 23.194 -29.069   6.068
+A2171 @ 19.190 -31.280   5.747 Hbond  2.79 A to B2017 @ 21.198 -32.768   6.984
+A2172 @ 21.908 -24.551   5.956 Hbond  2.88 A to A2167 @ 24.091 -25.166   7.724
+A2173 @ 17.491 -27.415   3.722 clash  2.48 A to A2174 @ 18.631 -25.348   2.946
+A2173 @ 18.631 -25.348   2.946 clash  2.48 A to A2173 @ 17.491 -27.415   3.722
+A2175 @ 13.803 -31.580  -0.310 Hbond  2.73 A to A2078 @ 12.351 -30.738  -2.461
+A2176 @ 18.357 -29.609   2.704 Hbond  2.57 A to A2173 @ 17.491 -27.415   3.722
+A2177 @ 13.971 -35.195   0.981 Hbond  2.70 A to A2090 @ 11.912 -36.286  -0.379
+A2077 @  9.290 -35.083   0.382 clash  1.56 A to A2077 @  8.830 -34.200  -0.813
+A2179 @ 16.737 -34.835   0.753 Hbond  2.64 A to A2092 @ 18.664 -36.438  -0.086
+A2180 @ 18.744 -31.789  26.492 Hbond  2.77 A to A2144 @ 17.765 -34.077  25.278
+A2181 @ 19.920 -28.270  25.617 Hbond  2.98 A to A2185 @ 20.814 -28.018  22.785
+A2182 @ 11.937 -34.140  30.018 Hbond  2.70 A to A2142 @ 12.052 -33.804  27.340
+A2138 @ 10.084 -32.413  31.438 clash  2.03 A to A2138 @ 10.069 -30.923  30.053
+A2184 @ 18.225 -22.982  27.841 Hbond  2.84 A to A2098 @ 20.749 -22.751  26.562
+A2185 @ 20.814 -28.018  22.785 Hbond  2.77 A to A2100 @ 22.175 -25.733  23.573
+A2186 @ 20.744 -23.478  23.834 Hbond  2.68 A to A2100 @ 22.175 -25.733  23.573
+A2187 @ 21.104 -17.609  27.238 Hbond  2.68 A to A2101 @ 23.307 -17.222  28.716
+A2188 @ 19.218 -18.506  29.003 Hbond  2.73 A to A2187 @ 21.104 -17.609  27.238
+A2191 @  9.968 -22.653   1.085 Hbond  2.67 A to A2153 @ 11.867 -24.298   0.186
+A2193 @ -0.036 -31.145   2.503 clash  1.94 A to A2104 @  0.843 -32.539   1.476
+A2194 @  2.064 -29.469   2.158 Hbond  2.55 A to A2151 @  2.314 -26.944   1.927
+A2198 @  0.219 -34.819  32.149 Hbond  2.58 A to A2118 @  0.218 -36.887  30.602
+B2002 @ 22.026 -45.116   5.190 Hbond  3.19 A to B2003 @ 23.290 -47.953   4.450
+B2003 @ 23.290 -47.953   4.450 Hbond  3.19 A to B2002 @ 22.026 -45.116   5.190
+B2005 @ 21.804 -49.318   7.055 Hbond  3.14 A to B2006 @ 24.565 -49.884   8.431
+B2006 @ 24.565 -49.884   8.431 Hbond  2.50 A to B2044 @ 24.933 -52.246   7.693
+B2007 @ 26.684 -37.615   7.665 clash  1.60 A to B2008 @ 26.863 -36.323   6.733
+B2007 @ 26.863 -36.323   6.733 clash  1.60 A to B2007 @ 26.684 -37.615   7.665
+B2009 @ 26.181 -32.698   6.534 Hbond  2.78 A to B2027 @ 23.607 -31.961   5.786
+B2010 @ 27.539 -33.818  11.158 Hbond  2.53 A to B2011 @ 28.103 -35.356   9.224
+B2011 @ 28.103 -35.356   9.224 Hbond  2.53 A to B2010 @ 27.539 -33.818  11.158
+B2012 @ 27.723 -37.677  10.363 clash  1.77 A to B2016 @ 29.081 -38.548  11.097
+B2013 @ 23.259 -41.726  15.221 Hbond  2.63 A to B2028 @ 23.869 -44.280  15.292
+B2015 @ 21.968 -38.498  14.325 Hbond  2.97 A to B2032 @ 22.494 -36.643  16.587
+B2012 @ 29.081 -38.548  11.097 clash  1.77 A to B2012 @ 27.723 -37.677  10.363
+B2017 @ 21.198 -32.768   6.984 Hbond  2.79 A to A2171 @ 19.190 -31.280   5.747
+B2018 @ 27.836 -29.057  12.098 Hbond  2.83 A to B2022 @ 26.912 -26.489  12.860
+B2019 @ 26.565 -36.769  20.659 Hbond  2.71 A to B2029 @ 24.517 -35.003  20.428
+B2021 @ 26.520 -33.052  19.326 Hbond  2.54 A to B2024 @ 25.970 -32.685  21.777
+B2022 @ 26.912 -26.489  12.860 clash  1.72 A to A2169 @ 25.312 -26.556  12.244
+B2023 @ 28.438 -27.595  14.731 Hbond  2.66 A to B2022 @ 26.912 -26.489  12.860
+B2024 @ 25.970 -32.685  21.777 Hbond  2.54 A to B2021 @ 26.520 -33.052  19.326
+B2025 @ 26.344 -27.003  23.040 Hbond  2.75 A to A2161 @ 26.223 -24.862  21.315
+B2027 @ 23.607 -31.961   5.786 Hbond  2.78 A to B2009 @ 26.181 -32.698   6.534
+B2028 @ 23.869 -44.280  15.292 Hbond  2.63 A to B2013 @ 23.259 -41.726  15.221
+B2029 @ 24.517 -35.003  20.428 Hbond  2.71 A to B2019 @ 26.565 -36.769  20.659
+B2030 @ 29.334 -26.046  23.625 Hbond  3.19 A to B2025 @ 26.344 -27.003  23.040
+B2031 @ 22.098 -35.246  19.184 Hbond  2.73 A to B2029 @ 24.517 -35.003  20.428
+B2032 @ 22.494 -36.643  16.587 Hbond  2.97 A to B2015 @ 21.968 -38.498  14.325
+B2033 @ 13.259 -41.388  -0.020 Hbond  2.77 A to B2036 @ 13.068 -41.035   2.722
+B2034 @ 25.143 -41.166   2.349 Hbond  2.96 A to B2040 @ 23.173 -43.131   1.340
+B2036 @ 13.068 -41.035   2.722 Hbond  2.77 A to B2033 @ 13.259 -41.388  -0.020
+B2037 @ 17.089 -56.246  15.132 Hbond  2.72 A to B2051 @ 16.223 -54.521  13.217
+B2038 @ 15.596 -42.970  -0.521 Hbond  2.87 A to B2033 @ 13.259 -41.388  -0.020
+B2040 @ 23.173 -43.131   1.340 Hbond  2.96 A to B2034 @ 25.143 -41.166   2.349
+B2041 @ 16.378 -48.082   2.218 Hbond  2.82 A to B2042 @ 17.825 -50.256   1.151
+B2042 @ 17.825 -50.256   1.151 Hbond  2.82 A to B2041 @ 16.378 -48.082   2.218
+B2043 @ 24.709 -54.598   6.665 Hbond  2.58 A to B2044 @ 24.933 -52.246   7.693
+B2044 @ 24.933 -52.246   7.693 Hbond  2.50 A to B2006 @ 24.565 -49.884   8.431
+B2045 @ 19.851 -47.276  21.611 Hbond  2.73 A to B2155 @ 17.904 -45.361  21.721
+B2046 @ 22.545 -46.073  16.901 clash  2.35 A to B2085 @ 20.781 -46.089  18.460
+B2048 @ 26.996 -43.103  22.584 Hbond  2.69 A to B2088 @ 24.587 -43.873  23.511
+B2049 @ 22.641 -49.713  10.159 Hbond  2.59 A to B2006 @ 24.565 -49.884   8.431
+B2050 @ 21.337 -34.894  26.791 Hbond  2.73 A to B2094 @ 19.739 -35.154  28.990
+B2051 @ 16.223 -54.521  13.217 Hbond  2.72 A to B2037 @ 17.089 -56.246  15.132
+B2052 @ 19.933 -51.511  12.902 Hbond  2.76 A to B2079 @ 18.851 -49.804  14.786
+B2053 @ 12.941 -59.629   8.556 Hbond  3.08 A to B2054 @ 12.480 -62.349   9.921
+B2054 @ 12.480 -62.349   9.921 Hbond  3.08 A to B2053 @ 12.941 -59.629   8.556
+B2055 @ -1.387 -60.389   4.336 Hbond  2.76 A to B2101 @  1.206 -59.744   5.026
+B2057 @ -2.840 -59.183  17.988 clash  2.26 A to B2064 @ -4.345 -59.473  19.652
+B2058 @ 16.653 -59.003  15.076 Hbond  2.79 A to B2037 @ 17.089 -56.246  15.132
+B2059 @  6.644 -61.718  15.633 Hbond  2.57 A to B2104 @  4.579 -62.662  14.419
+B2060 @  1.848 -34.963   1.391 Hbond  2.63 A to A2104 @  0.843 -32.539   1.476
+B2061 @ 10.377 -47.680  -3.124 Hbond  2.73 A to B2153 @  7.894 -47.333  -4.199
+B2062 @ -7.187 -60.087  13.623 Hbond  2.78 A to B2124 @ -6.317 -58.701  15.871
+B2063 @ -6.954 -60.118  18.281 Hbond  2.76 A to B2127 @ -8.318 -59.147  20.470
+B2057 @ -4.345 -59.473  19.652 clash  2.26 A to B2057 @ -2.840 -59.183  17.988
+B2066 @-12.553 -52.567  24.718 Hbond  2.68 A to B2129 @-12.256 -53.206  22.133
+B2067 @-10.643 -54.435  25.879 Hbond  2.75 A to B2130 @-10.675 -55.426  23.310
+B2068 @ -8.279 -58.796  11.248 Hbond  2.69 A to B2134 @ -8.616 -56.286  10.335
+B2069 @-11.164 -51.891   7.966 Hbond  2.78 A to B2135 @-11.325 -52.289  10.711
+B2070 @-10.886 -47.118   7.568 Hbond  2.74 A to B2136 @ -9.493 -49.410   8.135
+B2071 @  0.000 -36.507   0.000 Hbond  2.76 A to B2145 @ -1.299 -38.343   1.599
+B2072 @  8.141 -61.489   2.603 Hbond  2.85 A to B2100 @  9.282 -60.122   0.373
+B2073 @  6.440 -62.884   4.893 Hbond  3.12 A to B2076 @  4.415 -62.343   7.201
+B2075 @ -5.219 -36.429   1.972 Hbond  2.78 A to B2146 @ -3.973 -38.891   1.636
+B2076 @  4.415 -62.343   7.201 Hbond  2.71 A to B2102 @  2.345 -63.661   8.359
+B2079 @ 18.851 -49.804  14.786 Hbond  2.66 A to B2080 @ 16.596 -51.028  15.474
+B2080 @ 16.596 -51.028  15.474 Hbond  2.66 A to B2079 @ 18.851 -49.804  14.786
+B2082 @ 19.339 -48.449  18.988 Hbond  2.82 A to B2085 @ 20.781 -46.089  18.460
+B2083 @ 16.031 -45.760  19.675 Hbond  2.80 A to B2155 @ 17.904 -45.361  21.721
+B2084 @ 16.803 -43.431  18.261 Hbond  2.83 A to B2083 @ 16.031 -45.760  19.675
+B2085 @ 20.781 -46.089  18.460 clash  2.35 A to B2085 @ 22.545 -46.073  16.901
+B2086 @ 17.869 -42.405  20.946 Hbond  3.06 A to B2155 @ 17.904 -45.361  21.721
+B2087 @ 26.552 -40.906  20.703 Hbond  2.93 A to B2048 @ 26.996 -43.103  22.584
+B2088 @ 24.587 -43.873  23.511 Hbond  2.69 A to B2048 @ 26.996 -43.103  22.584
+B2089 @ 22.754 -45.942  21.982 Hbond  3.16 A to B2088 @ 24.587 -43.873  23.511
+B2090 @ 22.749 -37.405  26.547 Hbond  2.89 A to B2050 @ 21.337 -34.894  26.791
+B2091 @ 20.012 -34.589  23.277 Hbond  3.05 A to A2144 @ 17.765 -34.077  25.278
+B2092 @ 14.209 -42.765  26.989 Hbond  2.77 A to B2154 @ 15.211 -45.309  26.575
+B2094 @ 19.739 -35.154  28.990 Hbond  2.54 A to B2095 @ 19.726 -37.506  29.940
+B2095 @ 19.726 -37.506  29.940 Hbond  2.54 A to B2094 @ 19.739 -35.154  28.990
+B2096 @ 14.889 -50.703   0.321 Hbond  3.08 A to B2042 @ 17.825 -50.256   1.151
+B2097 @ 13.364 -47.355  -0.072 Hbond  2.61 A to B2119 @ 10.944 -46.562  -0.659
+B2099 @  2.202 -60.703   2.810 Hbond  2.61 A to B2101 @  1.206 -59.744   5.026
+B2100 @  9.282 -60.122   0.373 Hbond  2.85 A to B2072 @  8.141 -61.489   2.603
+B2101 @  1.206 -59.744   5.026 Hbond  2.61 A to B2099 @  2.202 -60.703   2.810
+B2102 @  2.345 -63.661   8.359 Hbond  2.71 A to B2076 @  4.415 -62.343   7.201
+B2104 @  4.579 -62.662  14.419 Hbond  2.57 A to B2059 @  6.644 -61.718  15.633
+B2106 @  0.109 -59.315  18.525 Hbond  3.00 A to B2057 @ -2.840 -59.183  17.988
+B2109 @  7.403 -53.222  23.877 Hbond  2.84 A to B2112 @  7.214 -55.122  25.979
+B2110 @  1.957 -50.399  28.651 clash  1.34 A to B2111 @  3.213 -50.162  29.054
+B2110 @  3.213 -50.162  29.054 clash  1.34 A to B2110 @  1.957 -50.399  28.651
+B2112 @  7.214 -55.122  25.979 Hbond  2.84 A to B2109 @  7.403 -53.222  23.877
+B2114 @  1.886 -35.221   4.218 Hbond  2.84 A to B2060 @  1.848 -34.963   1.391
+B2115 @  5.401 -37.080   2.260 Hbond  2.73 A to A2145 @  8.070 -36.656   2.638
+B2116 @  5.597 -39.309   0.602 Hbond  2.78 A to B2115 @  5.401 -37.080   2.260
+B2117 @  9.957 -43.702  -3.709 Hbond  2.78 A to B2120 @  7.439 -44.687  -4.350
+B2118 @ 11.042 -42.412  -1.388 Hbond  2.80 A to B2033 @ 13.259 -41.388  -0.020
+B2119 @ 10.944 -46.562  -0.659 Hbond  2.61 A to B2097 @ 13.364 -47.355  -0.072
+B2120 @  7.439 -44.687  -4.350 Hbond  2.69 A to B2153 @  7.894 -47.333  -4.199
+B2123 @ -3.763 -57.911  15.858 Hbond  2.65 A to B2057 @ -2.840 -59.183  17.988
+B2124 @ -6.317 -58.701  15.871 Hbond  2.67 A to B2123 @ -3.763 -57.911  15.858
+B2125 @ -4.625 -56.830  18.678 clash  0.79 A to B2126 @ -4.829 -56.800  19.441
+B2126 @ -4.829 -56.800  19.441 clash  0.79 A to B2126 @ -4.625 -56.830  18.678
+B2127 @ -8.318 -59.147  20.470 Hbond  2.76 A to B2063 @ -6.954 -60.118  18.281
+B2128 @-12.289 -57.380  21.704 Hbond  2.94 A to B2168 @-13.654 -55.489  23.498
+B2129 @-12.256 -53.206  22.133 Hbond  2.68 A to B2066 @-12.553 -52.567  24.718
+B2130 @-10.675 -55.426  23.310 Hbond  2.75 A to B2067 @-10.643 -54.435  25.879
+B2131 @ -9.616 -52.351  21.465 Hbond  2.85 A to B2129 @-12.256 -53.206  22.133
+B2134 @ -8.616 -56.286  10.335 Hbond  2.69 A to B2068 @ -8.279 -58.796  11.248
+B2135 @-11.325 -52.289  10.711 Hbond  2.78 A to B2069 @-11.164 -51.891   7.966
+B2136 @ -9.493 -49.410   8.135 Hbond  2.74 A to B2070 @-10.886 -47.118   7.568
+B2139 @ -5.184 -43.111   6.407 clash  0.71 A to B2140 @ -5.448 -43.469   5.852
+B2140 @ -5.448 -43.469   5.852 clash  0.71 A to B2140 @ -5.184 -43.111   6.407
+B2141 @ -7.748 -49.546   5.926 Hbond  2.82 A to B2136 @ -9.493 -49.410   8.135
+B2142 @ -4.214 -45.645   2.660 clash  1.12 A to B2143 @ -3.943 -46.122   3.632
+B2143 @ -3.943 -46.122   3.632 clash  1.12 A to B2143 @ -4.214 -45.645   2.660
+B2144 @ -5.080 -43.174   2.271 Hbond  2.65 A to B2143 @ -4.214 -45.645   2.660
+B2145 @ -1.299 -38.343   1.599 Hbond  2.73 A to B2146 @ -3.973 -38.891   1.636
+B2146 @ -3.973 -38.891   1.636 Hbond  2.73 A to B2145 @ -1.299 -38.343   1.599
+B2147 @ -3.006 -49.114  25.149 Hbond  2.84 A to A2035 @ -4.088 -49.391  22.542
+B2148 @  0.524 -49.352  28.752 clash  1.78 A to B2110 @  1.957 -50.399  28.651
+B2151 @  1.337 -59.941   0.362 Hbond  2.71 A to B2099 @  2.202 -60.703   2.810
+B2153 @  7.894 -47.333  -4.199 Hbond  2.69 A to B2120 @  7.439 -44.687  -4.350
+B2154 @ 15.211 -45.309  26.575 Hbond  2.77 A to B2092 @ 14.209 -42.765  26.989
+B2155 @ 17.904 -45.361  21.721 Hbond  2.73 A to B2045 @ 19.851 -47.276  21.611
+B2156 @ 14.023 -49.359  27.241 Hbond  2.82 A to B2161 @ 15.375 -50.653  29.351
+B2157 @ 18.591 -48.959  27.166 Hbond  2.80 A to B2165 @ 17.989 -51.122  28.847
+B2158 @  9.952 -53.476  22.534 Hbond  2.66 A to B2159 @ 11.093 -55.825  23.056
+B2159 @ 11.093 -55.825  23.056 Hbond  2.66 A to B2158 @  9.952 -53.476  22.534
+B2160 @ 13.125 -55.893  21.193 Hbond  2.76 A to B2159 @ 11.093 -55.825  23.056
+B2161 @ 15.375 -50.653  29.351 Hbond  2.57 A to B2162 @ 13.678 -52.136  30.589
+B2162 @ 13.678 -52.136  30.589 Hbond  2.57 A to B2161 @ 15.375 -50.653  29.351
+B2165 @ 17.989 -51.122  28.847 Hbond  2.70 A to B2161 @ 15.375 -50.653  29.351
+Mean B value for waters = 23.93 (from 369 valid waters)
+Water A3 coordinated to metal A123 CA: 3.60 Å
+Water A4 coordinated to metal A77 CA: 3.61 Å
+Water A5 coordinated to metal A47 CD: 3.56 Å
+Water A6 coordinated to metal A47 CA: 3.65 Å
+Water A7 coordinated to metal A98 CA: 3.87 Å
+Water A8 coordinated to metal A132 CA: 3.72 Å
+Water A9 coordinated to metal A34 CD: 3.51 Å
+Water A10 coordinated to metal A118 CA: 3.49 Å
+Water A11 coordinated to metal A43 HG: 2.68 Å
+Water A12 coordinated to metal A45 CD: 3.84 Å
+Water A13 coordinated to metal A94 CA: 3.82 Å
+Water A14 coordinated to metal A133 CD: 3.59 Å
+Water A15 coordinated to metal A74 CA: 3.85 Å
+Water A17 coordinated to metal A133 CD: 3.82 Å
+Water A18 coordinated to metal A123 CA: 3.73 Å
+Water A19 coordinated to metal A114 CA: 3.68 Å
+Water A20 coordinated to metal A36 CD: 3.69 Å
+Water A21 coordinated to metal A40 CA: 3.60 Å
+Water A22 coordinated to metal A93 CA: 3.87 Å
+Water A23 coordinated to metal A135 CD: 3.81 Å
+Water A24 coordinated to metal A81 CA: 3.27 Å
+Water A25 coordinated to metal A114 CA: 3.77 Å
+Water A26 coordinated to metal A45 CD: 3.83 Å
+Water A28 coordinated to metal A96 CA: 3.58 Å
+Water A29 coordinated to metal A139 CD: 3.60 Å
+Water A30 coordinated to metal A96 HG: 3.86 Å
+Water A31 coordinated to metal A49 CA: 3.50 Å
+Water A34 coordinated to metal A132 HG: 2.28 Å
+Water A35 coordinated to metal A72 CA: 3.73 Å
+Water A37 coordinated to metal A60 CA: 3.19 Å
+Water A38 coordinated to metal A116 CA: 3.45 Å
+Water A39 coordinated to metal A114 CA: 3.69 Å
+Water A40 coordinated to metal A45 CD: 3.74 Å
+Water A41 coordinated to metal A47 CA: 3.78 Å
+Water A42 coordinated to metal A124 CD: 3.62 Å
+Water A43 coordinated to metal A92 CA: 3.49 Å
+Water A44 coordinated to metal A92 CA: 3.40 Å
+Water A45 coordinated to metal A47 CA: 3.59 Å
+Water A46 coordinated to metal A133 CD: 3.27 Å
+Water A48 coordinated to metal A37 CA: 3.55 Å
+Water A49 coordinated to metal A79 CA: 3.88 Å
+Water A50 coordinated to metal A117 CE: 3.76 Å
+Water A52 coordinated to metal A50 CA: 3.31 Å
+Water A54 coordinated to metal A48 CA: 3.87 Å
+Water A55 coordinated to metal A55 CA: 3.81 Å
+Water A59 coordinated to metal A124 CD: 3.51 Å
+Water A60 coordinated to metal A45 CD: 3.68 Å
+Water A61 too close to A97 HD22: 1.32 Å
+Water A62 coordinated to metal A130 CD: 3.64 Å
+Water A64 coordinated to metal A116 CA: 3.79 Å
+Water A66 coordinated to metal A121 HG: 2.76 Å
+Water A67 coordinated to metal A123 CA: 3.71 Å
+Water A68 coordinated to metal A107 CA: 3.52 Å
+Water A69 coordinated to metal A143 CD: 3.26 Å
+Water A70 coordinated to metal A51 CA: 3.86 Å
+Water A71 coordinated to metal A123 CA: 3.45 Å
+Water A72 coordinated to metal A75 CA: 3.70 Å
+Water A74 coordinated to metal A75 CD: 3.68 Å
+Water A75 coordinated to metal A36 CE: 3.23 Å
+Water A77 coordinated to metal A43 HG: 3.69 Å
+Water A78 coordinated to metal A76 CD: 3.74 Å
+Water A79 coordinated to metal A48 CA: 3.60 Å
+Water A80 coordinated to metal A90 CA: 3.76 Å
+Water A81 coordinated to metal A115 CA: 3.53 Å
+Water A83 coordinated to metal A143 CD: 3.71 Å
+Water A84 coordinated to metal A131 CA: 3.89 Å
+Water A85 coordinated to metal A119 HG: 2.67 Å
+Water A87 coordinated to metal A36 CE: 3.31 Å
+Water A92 coordinated to metal A60 CA: 3.86 Å
+Water A93 coordinated to metal A122 CA: 3.77 Å
+Water A95 coordinated to metal A32 CA: 3.70 Å
+Water A96 coordinated to metal A123 CA: 3.86 Å
+Water A98 coordinated to metal A37 CA: 3.85 Å
+Water A99 coordinated to metal A139 CD: 3.89 Å
+Water A100 coordinated to metal B78 CD: 3.65 Å
+Water A101 coordinated to metal A71 CA: 3.89 Å
+Water A104 coordinated to metal A107 CA: 3.60 Å
+Water A105 coordinated to metal A117 CD: 3.65 Å
+Water A106 coordinated to metal A151 CA: 3.68 Å
+Water A107 coordinated to metal A30 CA: 3.46 Å
+Water A108 coordinated to metal A133 CD: 3.78 Å
+Water A109 coordinated to metal A78 CA: 3.81 Å
+Water A110 coordinated to metal A79 CD: 3.45 Å
+Water A112 coordinated to metal A75 CA: 3.73 Å
+Water A113 coordinated to metal A54 HG: 3.63 Å
+Water A116 coordinated to metal A70 CA: 3.83 Å
+Water A118 coordinated to metal A81 CA: 3.69 Å
+Water A119 coordinated to metal A139 CA: 3.71 Å
+Water A121 coordinated to metal A36 CE: 3.11 Å
+Water A122 coordinated to metal A38 CA: 3.86 Å
+Water A124 coordinated to metal A115 CA: 3.76 Å
+Water A126 coordinated to metal A45 CD: 3.82 Å
+Water A128 coordinated to metal A122 HG: 3.37 Å
+Water A133 coordinated to metal A52 HG: 3.74 Å
+Water A134 coordinated to metal A36 CD: 3.85 Å
+Water A139 coordinated to metal B79 CD: 3.63 Å
+Water A141 coordinated to metal A50 CD: 3.62 Å
+Water A143 coordinated to metal A133 CD: 3.24 Å
+Water A145 coordinated to metal A135 CD: 3.66 Å
+Water A146 coordinated to metal A135 CD: 3.59 Å
+Water A147 coordinated to metal A60 CA: 3.85 Å
+Water A150 coordinated to metal A52 HG: 3.74 Å
+Water A153 coordinated to metal A32 CA: 3.76 Å
+Water A154 coordinated to metal A89 CD: 3.86 Å
+Water A158 coordinated to metal A86 CD: 3.61 Å
+Water A161 coordinated to metal B116 CD: 3.70 Å
+Water A162 coordinated to metal A90 CA: 3.49 Å
+Water A163 coordinated to metal A33 CA: 3.48 Å
+Water A165 coordinated to metal A73 CA: 3.30 Å
+Water A167 coordinated to metal A119 HG: 2.70 Å
+Water A168 coordinated to metal A56 CD: 3.72 Å
+Water A169 coordinated to metal A92 CA: 3.59 Å
+Water A171 coordinated to metal A35 CA: 3.65 Å
+Water A173 coordinated to metal A58 CA: 2.55 Å
+Water A177 coordinated to metal A130 CE: 3.37 Å
+Water A181 coordinated to metal A123 CA: 3.52 Å
+Water A182 coordinated to metal A62 CA: 3.85 Å
+Water A186 coordinated to metal A56 CD: 3.57 Å
+Water A187 coordinated to metal A119 HG: 2.39 Å
+Water A191 coordinated to metal A33 CA: 3.35 Å
+Water A192 coordinated to metal A91 CA: 3.76 Å
+Water B1 coordinated to metal B123 CA: 3.53 Å
+Water B2 coordinated to metal B138 CA: 3.72 Å
+Water B3 coordinated to metal B98 CA: 3.73 Å
+Water B4 coordinated to metal A43 HG: 2.16 Å
+Water B5 coordinated to metal B47 CA: 3.70 Å
+Water B6 coordinated to metal B124 CD: 3.64 Å
+Water B7 coordinated to metal B132 CA: 3.48 Å
+Water B9 coordinated to metal B132 CA: 3.83 Å
+Water B10 coordinated to metal B96 CA: 3.75 Å
+Water B11 coordinated to metal B1166 MG: 2.09 Å
+Water B12 coordinated to metal A47 CD: 3.82 Å
+Water B15 coordinated to metal B77 CA: 3.54 Å
+Water B16 coordinated to metal B81 CA: 3.48 Å
+Water B17 coordinated to metal B1166 MG: 2.11 Å
+Water B18 coordinated to metal B43 HG: 2.73 Å
+Water B19 coordinated to metal B40 CA: 3.60 Å
+Water B20 coordinated to metal B159 CA: 3.65 Å
+Water B21 coordinated to metal B79 CA: 3.66 Å
+Water B22 coordinated to metal B36 CD: 3.75 Å
+Water B23 coordinated to metal B34 CD: 3.54 Å
+Water B24 coordinated to metal B1166 MG: 2.07 Å
+Water B25 coordinated to metal A45 CE: 3.79 Å
+Water B26 coordinated to metal B93 CA: 3.83 Å
+Water B27 coordinated to metal B56 CD: 3.39 Å
+Water B28 coordinated to metal B74 CA: 3.89 Å
+Water B29 coordinated to metal B114 CA: 3.82 Å
+Water B30 coordinated to metal B1166 MG: 2.07 Å
+Water B31 coordinated to metal B50 CA: 3.30 Å
+Water B32 coordinated to metal B135 CD: 3.78 Å
+Water B33 coordinated to metal B131 CA: 3.68 Å
+Water B34 coordinated to metal B139 CA: 3.75 Å
+Water B35 coordinated to metal B151 CA: 3.89 Å
+Water B37 coordinated to metal B90 CA: 3.55 Å
+Water B38 coordinated to metal B116 CA: 3.48 Å
+Water B39 coordinated to metal B49 CA: 3.49 Å
+Water B40 coordinated to metal B152 CA: 3.70 Å
+Water B42 coordinated to metal B139 CA: 3.71 Å
+Water B43 coordinated to metal B107 CA: 3.42 Å
+Water B45 coordinated to metal B81 CA: 3.89 Å
+Water B46 coordinated to metal B92 CA: 3.57 Å
+Water B47 coordinated to metal B72 CA: 3.71 Å
+Water B49 coordinated to metal B160 CA: 3.83 Å
+Water B50 coordinated to metal B143 CD: 3.59 Å
+Water B51 coordinated to metal B131 CA: 3.37 Å
+Water B52 coordinated to metal B74 CA: 3.89 Å
+Water B54 coordinated to metal B36 CE: 3.48 Å
+Water B56 coordinated to metal B156 CD: 3.58 Å
+Water B57 coordinated to metal B130 CE: 3.09 Å
+Water B58 coordinated to metal B117 CE: 3.33 Å
+Water B59 coordinated to metal B116 CA: 3.84 Å
+Water B60 coordinated to metal B47 CA: 3.71 Å
+Water B61 coordinated to metal B92 CA: 3.38 Å
+Water B62 coordinated to metal B92 CA: 3.83 Å
+Water B63 coordinated to metal B74 HG: 2.53 Å
+Water B64 coordinated to metal B114 CA: 3.64 Å
+Water B65 coordinated to metal B88 CE: 3.89 Å
+Water B66 coordinated to metal B45 CE: 3.51 Å
+Water B68 coordinated to metal B69 CA: 3.69 Å
+Water B69 coordinated to metal B35 CA: 3.58 Å
+Water B70 coordinated to metal B115 CA: 3.52 Å
+Water B72 coordinated to metal B117 CD: 3.85 Å
+Water B73 coordinated to metal B155 HG: 3.41 Å
+Water B74 coordinated to metal A116 CD: 3.81 Å
+Water B75 coordinated to metal B47 CA: 3.57 Å
+Water B79 coordinated to metal B155 HG: 3.43 Å
+Water B80 coordinated to metal B94 CA: 3.67 Å
+Water B81 coordinated to metal B39 CA: 3.48 Å
+Water B84 coordinated to metal B157 CA: 3.47 Å
+Water B86 coordinated to metal B78 CA: 3.81 Å
+Water B88 coordinated to metal B36 CE: 3.10 Å
+Water B89 coordinated to metal B36 CE: 3.40 Å
+Water B90 coordinated to metal B51 CA: 3.90 Å
+Water B91 coordinated to metal A116 CD: 3.73 Å
+Water B92 coordinated to metal B57 CA: 3.64 Å
+Water B94 coordinated to metal B75 CA: 3.81 Å
+Water B95 coordinated to metal B78 CD: 3.84 Å
+Water B96 coordinated to metal B154 CA: 3.68 Å
+Water B97 coordinated to metal B86 CD: 3.75 Å
+Water B98 coordinated to metal B76 CD: 3.82 Å
+Water B100 coordinated to metal B48 CA: 3.85 Å
+Water B101 coordinated to metal B58 CA: 3.74 Å
+Water B102 coordinated to metal B54 HG: 3.21 Å
+Water B103 coordinated to metal B73 CA: 3.57 Å
+Water B107 coordinated to metal B55 CA: 3.58 Å
+Water B110 coordinated to metal B115 CA: 3.66 Å
+Water B111 coordinated to metal B57 CA: 3.60 Å
+Water B112 coordinated to metal B117 CD: 3.65 Å
+Water B115 coordinated to metal B43 HG: 3.80 Å
+Water B117 coordinated to metal B38 CA: 3.79 Å
+Water B118 coordinated to metal B74 HG: 2.73 Å
+Water B123 coordinated to metal B89 CA: 3.69 Å
+Water B124 coordinated to metal B30 CA: 3.61 Å
+Water B125 coordinated to metal B86 CD: 3.58 Å
+Water B126 coordinated to metal B63 CA: 3.83 Å
+Water B127 coordinated to metal A121 HG: 3.33 Å
+Water B129 coordinated to metal B32 CA: 3.81 Å
+Water B132 coordinated to metal B64 CA: 3.75 Å
+Water B133 coordinated to metal B36 CD: 3.86 Å
+Water B135 coordinated to metal B88 CD: 3.76 Å
+Water B136 coordinated to metal B52 HG: 3.04 Å
+Water B139 coordinated to metal B53 CD: 3.54 Å
+Water B140 coordinated to metal B117 CE: 3.38 Å
+Water B144 coordinated to metal B52 HG: 2.97 Å
+Water B145 coordinated to metal B115 CA: 3.88 Å
+Water B147 coordinated to metal B52 HG: 1.96 Å
+Water B149 coordinated to metal B135 CD: 3.63 Å
+Water B150 coordinated to metal B40 CA: 3.79 Å
+Water B152 coordinated to metal B45 CD: 3.82 Å
+Water B154 coordinated to metal B48 CA: 3.74 Å
+Water B157 coordinated to metal B1166 MG: 3.87 Å
+Water B159 coordinated to metal B73 CA: 3.54 Å
+Water B160 coordinated to metal B33 CA: 3.53 Å
+Water B161 coordinated to metal A43 HG: 3.62 Å
+Water B162 coordinated to metal B119 HG: 2.98 Å
+Water B163 coordinated to metal B34 CD: 3.72 Å
+Water B164 coordinated to metal B114 CA: 3.78 Å
+Water B166 coordinated to metal B130 CE: 3.53 Å
+Water B169 coordinated to metal B97 CA: 3.82 Å
+Water B171 coordinated to metal B113 CA: 3.49 Å
+Water B172 coordinated to metal B29 CA: 3.79 Å
+Water B174 coordinated to metal B119 HG: 3.88 Å
+Water B175 coordinated to metal A43 HG: 3.26 Å
+Water B176 coordinated to metal B33 CA: 3.47 Å
 
 Final water statistics:
-  Total water molecules: 82
-  Unmarked waters: 62
-  'A' conformers: 10
-  'B' conformers: 10
+  Total water molecules: 369
+  Unmarked waters: 319
+  'A' conformers: 25
+  'B' conformers: 25
   Other conformers: 0
-  Total water positions: 72
+  Total water positions: 344
+    metal: 243
+     bump: 1
