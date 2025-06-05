@@ -3,7 +3,7 @@ import sys
 import math
 import os
 import argparse
-from typing import List, Dict, Tuple, Optional, Callable, Any, Union
+from typing import List, Dict, Tuple, Optional, Callable, Any, Union, Set
 from contextlib import contextmanager
 
 # Constants from the original C code
@@ -14,6 +14,9 @@ CLOSEHET = 3.9 * 3.9    # default min dist to heteroatom
 NUMGAP = 10             # gap in residue number
 HBARELY = 0.0891
 OBARELY = 0.1984
+
+# Common water residue names
+WATER_RESIDUES = {"HOH", "WAT", "H2O", "D2O", "TIP", "TIP3", "TIP4", "TIP5", "SPC", "OPC", "OPC3"}
 
 # Diagnostic strings
 DIAGSTR = ["faraway", " ok now", "  metal", "  leave", "altconf", "replace", "   bump", "   edit"]
@@ -85,7 +88,7 @@ class TotalSt:
         self.tpwa = []           # List of water atoms
         self.tpwap = 0           # Index into tpwa
         self.tpate = 0           # End of protein atoms
-        self.tchs = []           # List of chains
+        self.tchs = []           # List of chains (properly managed)
         self.tfpi = None         # Input file
         self.tfpwat = None       # Output file
         self.tfpl = None         # Log file
@@ -136,6 +139,10 @@ def pdbdist(p0: PDBRecord, p1: PDBRecord) -> float:
     dr = (p0.p_xc - p1.p_xc) ** 2 + (p0.p_yc - p1.p_yc) ** 2 + (p0.p_zc - p1.p_zc) ** 2
     return dr
 
+def is_water_residue(resname: str) -> bool:
+    """Check if residue name represents a water molecule"""
+    return resname.strip() in WATER_RESIDUES
+
 def isconformer(top: TotalSt, p0: PDBRecord, p1: PDBRecord, checkdist: int) -> int:
     """Returns true only if p1 is a later conformer than p0"""
     if p0 is None or p1 is None:
@@ -177,6 +184,31 @@ def get_sort_key_b(pr: PDBRecord) -> Tuple[int, float]:
     """Get sorting key for B-value based sorting."""
     return (pr.p_resnum, pr.p_bval)
 
+def validate_pdb_line(line: str) -> bool:
+    """Validate PDB line format and length"""
+    if len(line) < 54:  # Minimum for coordinates
+        return False
+    
+    # Check for required record types
+    if not (line.startswith("ATOM  ") or line.startswith("HETATM")):
+        return True  # Not an atom record, skip validation
+    
+    try:
+        # Validate numeric fields
+        _ = int(line[6:11].strip())  # Atom number
+        _ = float(line[30:38].strip())  # X coordinate
+        _ = float(line[38:46].strip())  # Y coordinate
+        _ = float(line[46:54].strip())  # Z coordinate
+        
+        if len(line) > 60:
+            _ = float(line[54:60].strip())  # Occupancy
+        if len(line) > 66:
+            _ = float(line[60:66].strip())  # B-factor
+            
+        return True
+    except (ValueError, IndexError):
+        return False
+
 def strtorec(line: str, ptp: PDBRecord) -> None:
     """Converts a PDB text string into a PDB record with proper error handling."""
     legal_conf = " ABCD"
@@ -184,9 +216,9 @@ def strtorec(line: str, ptp: PDBRecord) -> None:
     # Initialize the record
     ptp.p_nbr = None
     
-    # Ensure minimum line length for PDB format
-    if len(line) < 66:  # Minimum length for required fields
-        raise ValueError(f"PDB line too short: {len(line)} chars")
+    # Validate line first
+    if not validate_pdb_line(line):
+        raise ValueError(f"Invalid PDB line format: {line[:min(20, len(line))]}")
     
     try:
         # Extract record type (columns 1-6)
@@ -218,13 +250,13 @@ def strtorec(line: str, ptp: PDBRecord) -> None:
         # Extract residue number (columns 23-26)
         ptp.p_resno = ptp.p_resnum = int(line[22:26].strip()) if len(line) > 26 else 0
         
-        # Extract coordinates (columns 27-54)
-        ptp.p_xc = float(line[26:38].strip()) if len(line) > 38 else 0.0
+        # Extract coordinates (columns 31-54) - PDB uses 1-based column numbering
+        ptp.p_xc = float(line[30:38].strip()) if len(line) > 38 else 0.0
         ptp.p_yc = float(line[38:46].strip()) if len(line) > 46 else 0.0
         ptp.p_zc = float(line[46:54].strip()) if len(line) > 54 else 0.0
         
         # Extract occupancy and B value (columns 55-66)
-        ptp.p_occo = ptp.p_occ = float(line[54:60].strip()) if len(line) > 60 else 0.0
+        ptp.p_occo = ptp.p_occ = float(line[54:60].strip()) if len(line) > 60 else 1.0
         ptp.p_bvo = ptp.p_bval = float(line[60:66].strip()) if len(line) > 66 else 0.0
         
         # Extract atom ID (columns 77-78)
@@ -239,16 +271,15 @@ def findchain(line: str, top: TotalSt) -> None:
         chain_id = line[21] if len(line) > 21 else ' '
         
         # Check if this chain already exists
-        for i, chain in enumerate(top.tchs):
+        for chain in top.tchs:
             if chain.c_chainid == chain_id:
                 return
         
         # If not, add a new chain
-        if len(top.tchs) < 50:  # Original C code allocated 50 chains
-            new_chain = Chain()
-            new_chain.c_chainid = chain_id
-            top.tchs.append(new_chain)
-            top.tnch = len(top.tchs)
+        new_chain = Chain()
+        new_chain.c_chainid = chain_id
+        top.tchs.append(new_chain)
+        top.tnch = len(top.tchs)
 
 def getpdblin(line: str, top: TotalSt) -> None:
     """Process a line from the PDB file during the first pass"""
@@ -261,9 +292,9 @@ def getpdblin(line: str, top: TotalSt) -> None:
         elif line.startswith("HETATM"):
             top.tnatoms += 1
             
-            # Check if it's a water molecule
+            # Check if it's a water molecule using improved detection
             resname = line[17:20].strip() if len(line) > 20 else ""
-            if resname == "HOH" or resname == "WAT":
+            if is_water_residue(resname):
                 top.tnwatat += 1
             else:
                 top.tnhet += 1
@@ -275,7 +306,7 @@ def procargs(args, top: TotalSt, tfpl) -> None:
     top.tnatoms = top.tnpat = top.tnpwat = top.tnwaters = 0
     top.tfpl = tfpl
     top.tnch = 0  # Initialize chain count to 0
-    top.tchs = [Chain() for _ in range(50)]  # Allocate 50 chains
+    top.tchs = []  # Initialize empty chain list - chains are added dynamically
     top.t1ch_s = args.S
     top.thighbq = args.H
     top.tmaxhbsq = MAXHBONDSQ
@@ -298,13 +329,12 @@ def procargs(args, top: TotalSt, tfpl) -> None:
         tfpl.write(f"Run of {sys.argv[0]}\n")
 
 def ready(top: TotalSt) -> int:
-    """Prepare for processing by allocating memory and rewinding input file"""
-    # Allocate memory for protein atoms
-    top.tpat = [PDBRecord() for _ in range(top.tnatoms + 10)]
+    """Prepare for processing by using Python dynamic lists instead of pre-allocation"""
+    # Use dynamic lists instead of pre-allocated arrays
+    top.tpat = []
     top.tpatp = 0
     
-    # Allocate memory for water atoms
-    top.tpwa = [PDBRecord() for _ in range(top.tnwatat + 10)]
+    top.tpwa = []
     top.tpwap = 0
     
     # Rewind input file if it's not stdin
@@ -369,26 +399,29 @@ def procpdblin(line: str, top: TotalSt) -> None:
     if not (line.startswith("ATOM  ") or line.startswith("HETATM")):
         return
     
-    # Check if it's a water molecule
+    # Check if it's a water molecule using improved detection
     resname = line[17:20].strip() if len(line) > 20 else ""
-    is_water = resname == "HOH" or resname == "WAT"
+    is_water = is_water_residue(resname)
     
     if line.startswith("ATOM  "):
-        # Process protein atom
-        if top.tpatp < len(top.tpat):
-            strtorec(line, top.tpat[top.tpatp])
-            top.tpatp += 1
+        # Process protein atom - use dynamic list
+        new_record = PDBRecord()
+        strtorec(line, new_record)
+        top.tpat.append(new_record)
+        top.tpatp += 1
     elif line.startswith("HETATM"):
         if is_water:
-            # Process water atom
-            if top.tpwap < len(top.tpwa):
-                strtorec(line, top.tpwa[top.tpwap])
-                top.tpwap += 1
+            # Process water atom - use dynamic list
+            new_record = PDBRecord()
+            strtorec(line, new_record)
+            top.tpwa.append(new_record)
+            top.tpwap += 1
         else:
-            # Process other heteroatom
-            if top.tpatp < len(top.tpat):
-                strtorec(line, top.tpat[top.tpatp])
-                top.tpatp += 1
+            # Process other heteroatom - use dynamic list
+            new_record = PDBRecord()
+            strtorec(line, new_record)
+            top.tpat.append(new_record)
+            top.tpatp += 1
 
 def ismetal(atstr: str) -> int:
     """Check if atom is a metal"""
@@ -420,7 +453,8 @@ def noconformers(top: TotalSt) -> int:
     if maxres < -999:
         return 0
     
-    for pwap in top.tpwa[:top.tpwap]: # Iterate over active waters
+    for i in range(top.tpwap): # Need index access for modifying residue numbers
+        pwap = top.tpwa[i]
         if pwap.p_conf != ' ':
             if pwap.p_conf != 'A':
                 maxres += 1
@@ -452,6 +486,9 @@ def closestwat(top: TotalSt) -> None:
     If it's closer than 2.5 A, we report it as a possible collision.
     If it's between 2.5 and 3.2 A, we report it as a hydrogen bond.
     We check all waters, not just the ones that occur later in the list than the current one."""
+    if top.tpwap <= 1:  # Need at least 2 waters
+        return
+        
     for i in range(top.tpwap - 1):
         p0 = top.tpwa[i]
         mindist = 1.0e10
@@ -630,14 +667,20 @@ def meanbw(top: TotalSt) -> None:
     sum_b = 0.0
     count = 0
     
-    for pwap in top.tpwa[:top.tpwap]: # Iterate over active waters
-        sum_b += pwap.p_bval
-        count += 1
+    for i in range(top.tpwap): # Iterate over active waters
+        pwap = top.tpwa[i]
+        if pwap.p_bval > 0:  # Only include valid B-values
+            sum_b += pwap.p_bval
+            count += 1
     
     if count > 0:
         top.tmeanbw = sum_b / count
         if top.tfpl is not None:
-            top.tfpl.write(f"Mean B value for waters = {top.tmeanbw:.2f}\n")
+            top.tfpl.write(f"Mean B value for waters = {top.tmeanbw:.2f} (from {count} valid waters)\n")
+    else:
+        top.tmeanbw = 0.0
+        if top.tfpl is not None:
+            top.tfpl.write("Warning: No valid B-values found for waters\n")
 
 def adjustqb(top: TotalSt, p0: PDBRecord) -> None:
     """Adjusts quality (occupancy) and B values for multiple conformers"""
@@ -681,11 +724,16 @@ def adjustqb(top: TotalSt, p0: PDBRecord) -> None:
         p.p_conf = chr(ord('A') + i)
         p.p_nconfs = nrecs
         
-        # Adjust B value - use a scaled average
+        # Adjust B value - use a scaled average with proper validation
         new_b = scale_factor * avg_b
-        if new_b > 80.0:
-            print(f"adjustqb: B={new_b:.2f} to {p.p_conf}{p.p_resname} {p.p_chainid}{p.p_resnum:4d}")
-            new_b = 80.0
+        if new_b > 99.99:  # PDB format limit
+            if top.tfpl:
+                top.tfpl.write(f"Warning: Clamping B-factor from {new_b:.2f} to 99.99 for {p.p_conf}{p.p_resname} {p.p_chainid}{p.p_resnum:4d}\n")
+            new_b = 99.99
+        elif new_b < 0.0:  # B-factors shouldn't be negative
+            if top.tfpl:
+                top.tfpl.write(f"Warning: Clamping negative B-factor from {new_b:.2f} to 0.0 for {p.p_conf}{p.p_resname} {p.p_chainid}{p.p_resnum:4d}\n")
+            new_b = 0.0
         p.p_bval = new_b
         
         # Adjust occupancy - for pairs, use 0.5/0.5, for triplets or more, distribute evenly
@@ -753,29 +801,29 @@ def split4(top: TotalSt, pwap: PDBRecord) -> None:
             p2.p_nbr = p3
             p3.p_nbr = p2
         elif d01 == max_dist:
-            # Split between 0-1
+            # Split between 0-1: create two pairs (0-3, 2-1)
             p0.p_nbr = p3
-            p3.p_nbr = p2
-            p2.p_nbr = p3
-            p1.p_nbr = None  # Break the cycle
+            p3.p_nbr = p0
+            p2.p_nbr = p1
+            p1.p_nbr = p2
         elif d12 == max_dist:
-            # Split between 1-2
+            # Split between 1-2: create two pairs (0-1, 2-3)
             p0.p_nbr = p1
             p1.p_nbr = p0
-            p2.p_nbr = None
-            p3.p_nbr = None
+            p2.p_nbr = p3
+            p3.p_nbr = p2
         elif d23 == max_dist:
-            # Split between 2-3
+            # Split between 2-3: create two pairs (0-1, 2-3)
             p0.p_nbr = p1
+            p1.p_nbr = p0
+            p2.p_nbr = p3
+            p3.p_nbr = p2
+        elif d30 == max_dist:
+            # Split between 3-0: create two pairs (1-2, 3-0)
             p1.p_nbr = p2
             p2.p_nbr = p1
-            p3.p_nbr = None
-        elif d30 == max_dist:
-            # Split between 3-0
-            p1.p_nbr = p0
-            p0.p_nbr = p1
-            p2.p_nbr = p3
-            p3.p_nbr = p2
+            p3.p_nbr = p0
+            p0.p_nbr = p3
         
         # Report the split
         top.tfpl.write(f"Split four waters: {p0.p_chainid}{p0.p_resnum}, {p1.p_chainid}{p1.p_resnum}, "
@@ -857,8 +905,7 @@ def reduceocc(top: TotalSt) -> None:
 def makechains(top: TotalSt) -> None:
     """Figure out which chain each water belongs to"""
     # Initialize chain information
-    for chain_idx in range(top.tnch): # Iterate over active chains
-        chain = top.tchs[chain_idx]
+    for chain in top.tchs: # Iterate over active chains
         chain.c_wat0 = 0
         chain.c_watl1 = 0
         chain.c_watm0 = 0
@@ -883,9 +930,9 @@ def makechains(top: TotalSt) -> None:
             pwap.p_chainid = nearest_chain_id
             
             # Update the chain's water count
-            for chain_idx in range(top.tnch): # Iterate over active chains
-                if top.tchs[chain_idx].c_chainid == nearest_chain_id:
-                    top.tchs[chain_idx].c_watl += 1
+            for chain in top.tchs: # Iterate over active chains
+                if chain.c_chainid == nearest_chain_id:
+                    chain.c_watl += 1
                     break
 
 def adjustmult(top: TotalSt) -> None:
@@ -898,16 +945,14 @@ def adjustmult(top: TotalSt) -> None:
         chain_counts[pwap.p_chainid] += 1
     
     # Initialize residue numbers for each chain
-    for chain_idx in range(top.tnch): # Iterate over active chains
-        chain = top.tchs[chain_idx]
+    for chain in top.tchs: # Iterate over active chains
         chain.c_curwat = chain.c_minwat
     
     # Assign residue numbers to waters based on their chain
     # This loop needs index access for comparison with top.tpwa[i-1]
     for i in range(top.tpwap):
         pwap = top.tpwa[i]
-        for chain_idx in range(top.tnch): # Iterate over active chains
-            chain = top.tchs[chain_idx]
+        for chain in top.tchs: # Iterate over active chains
             if chain.c_chainid == pwap.p_chainid:
                 # If this is a new conformer (A or B), assign it the same residue number
                 if pwap.p_conf in ['A', 'B'] and i > 0 and \
@@ -1074,9 +1119,10 @@ def relateem(top: TotalSt, pwap: PDBRecord, thisp: PDBRecord) -> None:
              (pwap.p_conf == 'B' and thisp.p_conf == 'A'))):
             return
         
-        if pwap.p_conf != ' ':
-            thisp.p_nbr = pwap  # In Python, we can directly reference the object
-        if thisp.p_conf != ' ':
+        # Set up neighbor relationships more carefully to avoid cycles
+        if pwap.p_conf != ' ' and thisp.p_nbr is None:
+            thisp.p_nbr = pwap
+        if thisp.p_conf != ' ' and pwap.p_nbr is None:
             pwap.p_nbr = thisp
         return
     
@@ -1238,32 +1284,46 @@ def main() -> int:
         
         procargs(args, tos, tfpl_obj)
 
-        input_lines = []
-        is_stdin = (tos.tfpi == sys.stdin)
-
-        if is_stdin:
-            input_lines = list(tos.tfpi) # Read all lines from stdin at once
-
-        # First pass: read the PDB file to count atoms and chains
-        iterator1 = input_lines if is_stdin else tos.tfpi
-        for line in iterator1:
-            getpdblin(line, tos)
-
-        # Prepare for second pass
-        if ready(tos) != 0:
-            # Error in ready(), files will be closed in finally
-            return 1
-
-        # Second pass: process the PDB file
-        iterator2 = input_lines if is_stdin else tos.tfpi
-        for line in iterator2:
-            try:
-                procpdblin(line, tos)
-            except ValueError as e:
-                print(f"Warning: {e}", file=sys.stderr)
-                if tos.tfpl: 
-                    tos.tfpl.write(f"Warning processing line: {e}\n")
-                continue
+        # Handle stdin vs file input more efficiently
+        if tos.tfpi == sys.stdin:
+            # For stdin, we need to read once and store
+            input_lines = []
+            for line in tos.tfpi:
+                input_lines.append(line)
+                getpdblin(line, tos)  # Process during first read
+            
+            # Prepare for second pass
+            if ready(tos) != 0:
+                return 1
+            
+            # Second pass: process stored lines
+            for line in input_lines:
+                try:
+                    procpdblin(line, tos)
+                except ValueError as e:
+                    print(f"Warning: {e}", file=sys.stderr)
+                    if tos.tfpl: 
+                        tos.tfpl.write(f"Warning processing line: {e}\n")
+                    continue
+        else:
+            # For files, we can make two passes
+            # First pass: count atoms and chains
+            for line in tos.tfpi:
+                getpdblin(line, tos)
+            
+            # Prepare for second pass
+            if ready(tos) != 0:
+                return 1
+            
+            # Second pass: process the PDB file
+            for line in tos.tfpi:
+                try:
+                    procpdblin(line, tos)
+                except ValueError as e:
+                    print(f"Warning: {e}", file=sys.stderr)
+                    if tos.tfpl: 
+                        tos.tfpl.write(f"Warning processing line: {e}\n")
+                    continue
 
         tos.tnwaters = tos.tpwap
         noconformers(tos)
